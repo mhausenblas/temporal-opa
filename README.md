@@ -4,6 +4,8 @@ OPA's Rego has a number of built-in functions, ranging from string manipulation 
 
 ## Basics
 
+https://play.openpolicyagent.org/p/GIzuIT0mDz
+
 ## Finding stuff in logs
 
 Input: log, question: in what order did two events happen?
