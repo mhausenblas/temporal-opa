@@ -4,7 +4,20 @@ OPA's Rego has a number of built-in functions, ranging from string manipulation 
 
 ## Basics
 
-https://play.openpolicyagent.org/p/GIzuIT0mDz
+Let's assume we have input data in the following form:
+
+```json
+    ...
+    {
+        "msg": "...",
+        "timestamp": "YYY-MM-DDThh:mm:ssZ"
+    }
+    ...
+```
+
+That is, we're dealing with an array of timestamped entries. How can we check if a certain entry lies within a certain time window? For example, we want to filter for entries within the past week.
+    
+Solution: https://play.openpolicyagent.org/p/GIzuIT0mDz
 
 ## Finding stuff in logs
 
