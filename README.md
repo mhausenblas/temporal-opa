@@ -16,6 +16,8 @@ Let's assume we have input data in the following form:
 ```
 
 That is, we're dealing with an array of timestamped entries. How can we check if a certain entry lies within a certain time window? For example, we want to filter for entries within the past week.
+
+The basic idea is to convert the `timestamp` into a UNIX epoch represenation and diff it to the current timestamp.
     
 Solution: https://play.openpolicyagent.org/p/GIzuIT0mDz
 
