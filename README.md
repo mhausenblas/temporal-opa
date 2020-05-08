@@ -17,7 +17,17 @@ Let's assume we have input data in the following form:
 
 That is, we're dealing with an array of timestamped entries. How can we check if a certain entry lies within a certain time window? For example, we want to filter for entries within the past week.
 
-The basic idea is to convert the `timestamp` into a UNIX epoch represenation and diff it to the current timestamp.
+The basic idea is to convert the `timestamp` into a UNIX epoch represenation and diff it to the current timestamp:
+
+```
+valid_time_window(ts) = diff {
+  now := time.now_ns()
+  a_week := 60 * 60 * 24 * 7
+  diff := now/1000/1000/1000 - ts/1000/1000/1000
+  diff < a_week
+  now > ts
+}
+```
     
 Solution: https://play.openpolicyagent.org/p/GIzuIT0mDz
 
