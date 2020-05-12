@@ -4,6 +4,35 @@ OPA's Rego has a number of built-in functions, ranging from string manipulation 
 
 ## Basics
 
+```
+now := time.now_ns()
+```
+
+```
+ts := time.parse_rfc3339_ns("2020-04-03T02:01:00Z")
+```
+
+```
+[year, month, day] := time.date(ts)
+```
+
+```
+[hour, minute, second]:= time.clock(ts)
+```
+
+```
+day := time.weekday(ts)
+```
+
+```
+y := 0
+m := 1
+d := 0
+one_month_in_the_future := time.add_date(now, y, m, d)
+```
+
+## Validating time window
+
 Let's assume we have input data in the following form:
 
 ```json
