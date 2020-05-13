@@ -4,12 +4,18 @@ OPA's Rego has a number of built-in functions, ranging from string manipulation 
 
 ## Basics
 
+To get a timestamp of the current time and date in [UNIX Epoch format](https://en.wikipedia.org/wiki/Unix_time) (ns resolution), do:
+
 ```
 now := time.now_ns()
+# now is something like 1589025600000000000 
 ```
+
+To parse a timestamp in [RFC 3339](https://tools.ietf.org/html/rfc3339) format into an UNIX Epoch timestamp, do:
 
 ```
 ts := time.parse_rfc3339_ns("2020-04-03T02:01:00Z")
+#  ts == 1585879260000000000
 ```
 
 ```
