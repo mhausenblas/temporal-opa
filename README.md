@@ -18,24 +18,48 @@ ts := time.parse_rfc3339_ns("2020-04-03T02:01:00Z")
 #  ts == 1585879260000000000
 ```
 
+To get year, month, and day from an UNIX Epoch timestamp, do:
+
 ```
 [year, month, day] := time.date(ts)
+# year == 2020 , month == 4, day == 3
 ```
+
+To get hour, minute, and second from an UNIX Epoch timestamp, do:
 
 ```
 [hour, minute, second]:= time.clock(ts)
+# hour== 2, minute == 1, second == 0
 ```
 
+To get the weekday from an UNIX Epoch timestamp, do:
+
 ```
-day := time.weekday(ts)
+wday := time.weekday(ts)
+# wday == "Friday"
 ```
+
+To add year/month/day to an UNIX Epoch timestamp, do:
 
 ```
 y := 0
 m := 1
 d := 0
-one_month_in_the_future := time.add_date(now, y, m, d)
+one_month_in_the_future := time.add_date(ts, y, m, d)
+# one_month_in_the_future == 1588471260000000000
 ```
+
+The result of `time.add_date()` is an UNIX Epoch timestamp. If you want to convert it into an RFC 3339 formatted string, you can use a function like the following:
+
+```
+epoch2rfc3339(ts) = res {
+  [Y, M, D] := time.date(ts)
+  [h, m, s]:= time.clock(ts)
+  res := sprintf("%d-%02d-%02dT%02d:%02d:%02dZ", [Y, M, D, h, m, s])
+}
+```
+
+If you want to play around with the above basics yourself, you can use the [Rego Playground](https://play.openpolicyagent.org/p/UifwXAlfy2) containing the [rules](basics.rego).
 
 ## Validating time window
 
