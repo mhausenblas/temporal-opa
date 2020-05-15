@@ -74,12 +74,12 @@ Let's assume we have input data in the following form:
     ...
 ```
 
-That is, we're dealing with an array of timestamped entries. How can we check if a certain entry lies within a certain time window? For example, we want to filter for entries within the past week.
+That is, we're dealing with an array of timestamped entries. How can we check if a certain entry lies within a certain time window? 
 
-The basic idea is to convert the `timestamp` into a UNIX epoch represenation and diff it to the current timestamp:
+For example, we want to filter for entries within the past week. The basic idea is to convert the `timestamp` into a UNIX epoch represenation and diff it to the current timestamp:
 
 ```
-valid_time_window(ts) = diff {
+within_a_week(ts) {
   now := time.now_ns()
   a_week := 60 * 60 * 24 * 7
   diff := now/1000/1000/1000 - ts/1000/1000/1000
@@ -87,8 +87,11 @@ valid_time_window(ts) = diff {
   now > ts
 }
 ```
-    
-Solution: https://play.openpolicyagent.org/p/GIzuIT0mDz
+
+Note, above, that we're not only checking if the timestamp provided is within seven days (`diff < a_week`) but also if it is in the past (`now > ts`), otherwise values within seven days into the future would also be valid.
+
+If you want to play around with the above  yourself, you can use the [Rego Playground](https://play.openpolicyagent.org/p/6v2EfFSq3l) containing the [rules](timewindow.rego).
+
 
 ## Finding stuff in logs
 
