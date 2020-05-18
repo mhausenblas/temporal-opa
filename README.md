@@ -93,10 +93,10 @@ Note, above, that we're not only checking if the timestamp provided is within se
 If you want to play around with the above  yourself, you can use the [Rego Playground](https://play.openpolicyagent.org/p/6v2EfFSq3l) containing the [rules](timewindow.rego).
 
 
-## Finding stuff in logs
+## Event ordering in logs and metrics
 
-Input: log, question: in what order did two events happen?
+In this section we assume we have some sort of structured logs or metrics as an input and want to figure out in what order certain events happened? For example, `before`/`after` or if a time span is given, are they overlapping or not.
 
-## Verifying access
+## Auditing
 
 Input: audit trail, question: has X been accessed out of business hour time?
