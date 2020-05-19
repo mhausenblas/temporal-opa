@@ -97,6 +97,6 @@ If you want to play around with the above  yourself, you can use the [Rego Playg
 
 In this section we assume we have some sort of structured logs or metrics as an input and want to figure out in what order certain events happened? For example, `before`/`after` or if a time span is given, are they overlapping or not.
 
-## Auditing
+## Access auditing
 
-Input: audit trail, question: has X been accessed out of business hour time?
+In after-the-fact scenarios it's often necessary to verify when a certain event happened. For example, a question could be: has X been accessed out of business hour time?
