@@ -100,3 +100,7 @@ In this section we assume we have some sort of structured logs or metrics as an 
 ## Access auditing
 
 In after-the-fact scenarios it's often necessary to verify when a certain event happened. For example, a question could be: has X been accessed out of business hour time?
+
+## GitOps: compliance check
+
+In an GitOps setting, bots may be used to automatically review commits. This can be to verify if certain requirements are met, such as formatting or existence of documentation. One can also check compliance, for example, avoiding deployments on certain days or hours.
