@@ -104,3 +104,7 @@ In after-the-fact scenarios it's often necessary to verify when a certain event 
 ## GitOps: compliance check
 
 In an GitOps setting, bots may be used to automatically review commits. This can be to verify if certain requirements are met, such as formatting or existence of documentation. One can also check compliance, for example, avoiding deployments on certain days or hours.
+
+## Time zones: request routing
+
+In scenarios where time zone dependencies activities need to be scheduled or routed (follow-the-sun support, logistics).
