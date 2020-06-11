@@ -107,4 +107,4 @@ In an GitOps setting, bots may be used to automatically review commits. This can
 
 ## Time zones: request routing
 
-In scenarios where time zone dependencies activities need to be scheduled or routed (follow-the-sun support, logistics).
+In scenarios where time zone dependencies activities need to be scheduled or routed (follow-the-sun support, logistics). Conversion of time zones, UTC as ref, etc.
